@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="RFID">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pallet Tracking System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script src="~/assets/jquery/dist/jquery.min.js"></script>
+    <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+    <link href="~/assets/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+
+    <link href="~/assets/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/build/css/custom.css" rel="stylesheet">
+    
+    <script src="~/assets/angular/angular.min.js"></script>
+    <script src="~/assets/angular/app.js"></script>
+    
+
+    <script src="~/assets/angular/controller/pallettypeController.js"></script>
+    <script src="~/assets/angular/controller/palletstyleController.js"></script>
+    <script src="~/assets/angular/controller/palletsizeController.js"></script>
+    <script src="~/assets/angular/controller/palletlocationController.js"></script>
+    <script src="~/assets/angular/controller/palletsupplierController.js"></script>
+    <script src="~/assets/angular/controller/palletController.js"></script>
+    <script src="~/assets/angular/controller/readerController.js"></script>
+    <script src="~/assets/angular/controller/reportController.js"></script>
+    <script src="~/assets/angular/controller/trackingController.js"></script>
+    <script src="~/assets/angular/controller/areaController.js"></script>
+    <script src="~/assets/angular/controller/employeeController.js"></script>
+    <script src="~/assets/angular/controller/gateController.js"></script>
+</head>
+<body class="nav-md" ng-cloak>
+
+
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><i><img src="~/assets/images/pallet.png" /></i> <span> Pallet Tracking</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu profile quick info -->
+                   
+                    <!-- /menu profile quick info -->
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        
+                        <div class="menu_section">
+                                <h3>Menu</h3>
+
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a class="text-uppercase"><img src="~/assets/images/dashboard.png" /> Dashboard <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="~/en/tracking/palletlocations">Pallet Activity</a></li>
+                                        <li><a href="~/en/tracking/palletlocations">Pallet </a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="text-uppercase"><img src="~/assets/images/track.png" /> Tracking <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="~/en/tracking/palletlocation">Pallet Location</a></li>
+                                        <li><a href="~/en/tracking/palletactivity">Pallet Activity</a></li>
+                                        <li><a href="~/en/tracking/palletinventory">Pallet Inventory</a></li>
+                                       
+                                    </ul>
+                                </li>
+
+
+
+                            
+                                <li>
+                                    <a class="text-uppercase"><img src="~/assets/images/report.png" /> Report <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="~/en/pallettype/newpallettype">Check Locations</a></li>
+                                        <li><a href="~/en/pallettype/pallettypes">Pallet Movements</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="text-uppercase"><img src="~/assets/images/settings.png" /> Setup <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="~/en/pallet/pallets">Pallet</a></li>
+                                        <li><a href="~/en/pallettype/pallettypes">Pallet Type</a></li>
+                                        <li><a href="~/en/palletstyle/palletstyles">Pallet Style</a></li>
+                                        <li><a href="~/en/palletsize/palletsizes">Pallet Size</a></li>
+                                        <li><a href="~/en/palletsupplier/palletsuppliers">Supplier</a></li>
+                                        <li><a href="~/en/area/areas">Area</a></li>
+                                        <li><a href="~/en/gate/gate">Gate</a></li>
+                                        <li><a href="~/en/employee/employee">Employee</a></li>
+                                        <li><a href="~/en/palletlocation/palletlocations">Location</a></li>
+                                        <li><a href="~/en/reader/reader">Readers</a></li>
+                                    </ul>
+                                </li>
+                                
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                   
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    Francel Aquino
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"> Profile</a></li>
+                                    
+                                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                @RenderBody()
+
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    Trackline - Virtual Dimension
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+    <div id="progressWindow" class="modal" tabindex="9999999" data-backdrop="static" data-keyboard="false">
+        <p>Please wait</p>
+        <img src="~/assets/images/spinner.gif" />
+
+    </div>
+    <script src="~/assets/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/assets/build/js/custom.js"></script>
+    <script src="~/assets/bootstrap-modal/js/bootstrap-modalmanager.js" type="text/javascript"></script>
+    <script src="~/assets/bootstrap-modal/js/bootstrap-modal.js" type="text/javascript"></script>
+</body>
+</html>
+
+

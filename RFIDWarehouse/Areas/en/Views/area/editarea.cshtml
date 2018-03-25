@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "~/Areas/en/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row" ng-controller="areaController" ng-init="initAreaForm();getAreaInfo()">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Area <small>Update Area</small></h2>
+                <a href="~/en/area/areas" class="btn btn-dark btn-sm alignright">View Area</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="alert alert-info" style="display:none"></div>
+                <br />
+                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <input type="text" class="hidden" ng-model="areas.ID">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Area <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" required="required" class="form-control col-md-7 col-xs-12" ng-model="areas.AREA">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Area Type <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control col-md-7 col-xs-12" ng-model="areas.AREATYPE">
+                                <option value="">--Select--</option>
+                                <option ng-repeat="areatype in areatypes" value="{{areatype.ID}}">{{ areatype.AREATYPE }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Map
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="file" class="form-control col-md-7 col-xs-12" id="fileupload" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Active <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control col-md-7 col-xs-12" ng-model="areas.ACTIVE">
+                                <option value="A">Active</option>
+                                <option value="I">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <button type="button" ng-click="updateArea()" class="btn btn-success">Update</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

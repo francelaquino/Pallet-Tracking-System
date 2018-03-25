@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "newPallet";
+    Layout = "~/Areas/en/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row" ng-controller="palletstyleController" ng-init="getPalletStyles();">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Pallet Style <small>List of Pallet Style </small></h2>
+                <a href="newpalletstyle" class="btn btn-dark btn-sm alignright">Add New Pallet Style</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="alert alert-info" style="display:none"></div>
+                <br />
+                <div class="datatable" style="display:none">
+                    <table id="datatable" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Pallet Style</th>
+                                <th>Active</th>
+                                <th style="width:50px">Action</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr ng-repeat="style in styles">
+                                <td>{{ style.STYLE }}</td>
+                                <td>{{ style.ACTIVE }}</td>
+                                <td>
+                                    <a href="~/en/palletstyle/editpalletstyle/#/?id={{style.ID}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit</a>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Areas/en/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row" ng-controller="readerController" ng-init="getReaders();">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Reader <small>List of Readers </small></h2>
+                <a href="newreader" class="btn btn-dark btn-sm alignright">Add New Reader</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="alert alert-info" style="display:none"></div>
+                <br />
+                <div class="datatable" style="display:none">
+                    <table id="datatable" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Reader Model</th>
+                                <th>Reader Name</th>
+                                <th>Gate</th>
+                                <th>Ip Address</th>
+                                <th>Port</th>
+                                <th>Time</th>
+                                <th>Active</th>
+                                <th style="width:50px">Action</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr ng-repeat="reader in readers">
+                                <td>{{ reader.MODEL }}</td>
+                                <td>{{ reader.READERNAME }}</td>
+                                <td>{{ reader.GATE }}</td>
+                                <td>{{ reader.IPADDRESS }}</td>
+                                <td>{{ reader.PORT }}</td>
+                                <td>{{ reader.TIME }}</td>
+                                <td>{{ reader.ACTIVE }}</td>
+                                <td>
+                                    <a href="~/en/reader/editreader/#/?id={{reader.ID}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit</a>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

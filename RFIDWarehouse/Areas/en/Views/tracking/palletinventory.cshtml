@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "~/Areas/en/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row" ng-controller="trackingController" ng-init="getPalletInvetory();">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Tracking <small> Pallet Inventory </small></h2>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              
+                <div class="datatable" style="display:none">
+                    <h4>Count by Pallet Type</h4>
+                    <table id="inventory" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Area</th>
+                                <th>Type</th>
+                                <th style="width:150px">Total</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr ng-repeat="type in types">
+                                <td>{{ type.AREA }}</td>
+                                <td>{{ type.TYPE }}</td>
+                                <td>{{ type.CNT }}</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <h4>Count by Area</h4>
+                    <table id="area" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Area</th>
+                                <th style="width:150px">Total</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr ng-repeat="area in areas">
+                                <td>{{ area.AREA }}</td>
+                                <td>{{ area.CNT }}</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

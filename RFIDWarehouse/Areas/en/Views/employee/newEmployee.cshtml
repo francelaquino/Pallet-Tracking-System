@@ -1,0 +1,87 @@
+﻿@{
+    Layout = "~/Areas/en/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row" ng-controller="employeeController" ng-init="initEmployeeForm();">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Employee <small>Add New Employee</small></h2>
+                <a href="employee" class="btn btn-dark btn-sm alignright">View Employees</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="alert alert-info" style="display:none"></div>
+                <br />
+                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Employee No. <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" required="required" class="form-control col-md-7 col-xs-12" maxlength="50" ng-model="employees.EMPLOYEENO">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Employee Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" required="required" class="form-control col-md-7 col-xs-12" maxlength="100" ng-model="employees.NAME">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Email Address
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" class="form-control col-md-7 col-xs-12" maxlength="50" ng-model="employees.EMAILADDRESS">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Mobile No. <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" required="required" class="form-control col-md-7 col-xs-12" maxlength="50" ng-model="employees.MOBILENO">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Address
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" class="form-control col-md-7 col-xs-12" maxlength="200" ng-model="employees.ADDRESS">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Active <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control col-md-7 col-xs-12" ng-model="employees.ACTIVE">
+                                <option value="A">Active</option>
+                                <option value="I">Inactive</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <button type="button" ng-click="saveEmployee()" class="btn btn-success">Save</button>
+                            <button class="btn btn-primary" ng-click="initEmployeeForm()" type="reset">Reset</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

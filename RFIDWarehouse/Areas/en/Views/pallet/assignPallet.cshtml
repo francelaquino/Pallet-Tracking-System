@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "~/Areas/en/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row" ng-controller="palletController" ng-init="initAssignPalletForm();">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Pallet <small>Assign Pallet to Employee</small></h2>
+                <a href="pallets" class="btn btn-dark btn-sm alignright">View Pallet</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="alert alert-info" style="display:none"></div>
+                <br />
+                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+
+
+
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Employee
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control col-md-7 col-xs-12" ng-model="pallets.EMPLOYEE">
+                                <option value="">--Select--</option>
+                                <option ng-repeat="employee in employees" value="{{employee.ID}}">{{ employee.NAME }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Pallet
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control col-md-7 col-xs-12" ng-model="pallets.ID">
+                                <option value="">--Select--</option>
+                                <option ng-repeat="pa in pallet" value="{{pa.ID}}">{{ pa.NAME }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <button type="button" ng-click="assignPallet()" class="btn btn-success">Assign</button>
+                            <button class="btn btn-primary" ng-click="initPalletForm()" type="reset">Reset</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Areas/en/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row" ng-controller="palletsizeController" ng-init="initPalletSizeForm();getPalletSizeInfo()">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Pallet Size <small>Update Pallet Size</small></h2>
+                <a href="palletsizes" class="btn btn-dark btn-sm alignright">View Pallet Size</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="alert alert-info" style="display:none"></div>
+                <br />
+                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <input type="text" class="hidden" ng-model="sizes.ID">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Pallet Size <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" required="required" class="form-control col-md-7 col-xs-12" ng-model="sizes.SIZE">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Active <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control col-md-7 col-xs-12" ng-model="sizes.ACTIVE">
+                                <option value="A">Active</option>
+                                <option value="I">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <button type="button" ng-click="updatePalletSize()" class="btn btn-success">Update</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

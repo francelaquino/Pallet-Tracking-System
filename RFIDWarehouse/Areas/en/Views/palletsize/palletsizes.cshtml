@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Areas/en/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row" ng-controller="palletsizeController" ng-init="getPalletSizes();">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Pallet Size <small>List of Pallet Size </small></h2>
+                <a href="newpalletsize" class="btn btn-dark btn-sm alignright">Add New Pallet Size</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="alert alert-info" style="display:none"></div>
+                <br />
+                <div class="datatable" style="display:none">
+                    <table id="datatable" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Pallet Size</th>
+                                <th>Active</th>
+                                <th style="width:50px">Action</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr ng-repeat="size in sizes">
+                                <td>{{ size.SIZE }}</td>
+                                <td>{{ size.ACTIVE }}</td>
+                                <td>
+                                    <a href="~/en/palletsize/editpalletsize/#/?id={{size.ID}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit</a>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

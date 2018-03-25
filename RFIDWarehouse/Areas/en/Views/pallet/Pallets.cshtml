@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "~/Areas/en/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row" ng-controller="palletController" ng-init="getPallets();">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Pallet <small>List of Pallets </small></h2>
+                <a href="assignpallet" class="btn btn-dark btn-sm alignright">Assign Pallet to Employee</a>
+                <a href="newpallet"  class="btn btn-dark btn-sm alignright">Add New Pallet</a>
+                
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="alert alert-info" style="display:none"></div>
+                <br />
+                <div class="datatable" style="display:none">
+                    <table id="datatable" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>RFID</th>
+                                <th>Name</th>
+                                <th>Barcode</th>
+                                <th>Type</th>
+                                <th>Area</th>
+                                <th>Assigned To</th>
+                                <th>Active</th>
+                                <th style="width:50px">Action</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr ng-repeat="pallet in pallets">
+                                <td>{{ pallet.RFID }}</td>
+                                <td>{{ pallet.NAME }}</td>
+                                <td>{{ pallet.BARCODE }}</td>
+                                <td>{{ pallet.TYPE }}</td>
+                                <td>{{ pallet.AREA }}</td>
+                                <td>{{ pallet.EMPLOYEE }}</td>
+                                <td>{{ pallet.ACTIVE }}</td>
+                                <td>
+                                    <a href="~/en/pallet/editpallet/#/?id={{pallet.ID}}&gid={{pallet.GID}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit</a>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

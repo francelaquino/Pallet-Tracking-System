@@ -1,0 +1,101 @@
+﻿@{
+    Layout = "~/Areas/en/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row" ng-controller="readerController" ng-init="initReaderForm();getReaderInfo()">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Reader <small>Update Reader</small></h2>
+                <a href="~/en/reader/reader" class="btn btn-dark btn-sm alignright">View Readers</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="alert alert-info" style="display:none"></div>
+                <br />
+                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <input type="text" class="hidden" ng-model="readers.ID">
+                    <input type="text" class="hidden" ng-model="readers.GID">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Reader Model <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" required="required" class="form-control col-md-7 col-xs-12" ng-model="readers.MODEL">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Reader Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" required="required" class="form-control col-md-7 col-xs-12" ng-model="readers.READERNAME">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Gate
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control col-md-7 col-xs-12" ng-model="readers.GATE">
+                                <option value="">--Select--</option>
+                                <option ng-repeat="gate in gates" value="{{gate.ID}}">{{ gate.GATE }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Ip address
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" required="required" class="form-control col-md-7 col-xs-12" ng-model="readers.IPADDRESS">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Port
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="number" required="required" class="form-control col-md-7 col-xs-12" ng-model="readers.PORT">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Time <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control col-md-7 col-xs-12" ng-model="readers.TIME">
+                                <option value="">--Select--</option>
+                                <option ng-repeat="time in times" value="{{time.TIME}}">{{ time.TIME }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Active <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control col-md-7 col-xs-12" ng-model="readers.ACTIVE">
+                                <option value="A">Active</option>
+                                <option value="I">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <button type="button" ng-click="updateReader()" class="btn btn-success">Update</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
